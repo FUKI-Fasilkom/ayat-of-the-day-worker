@@ -1,0 +1,21 @@
+{
+  "name": "ayat-of-the-day",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A low-cost scheduled X publisher for Ayat of The Day.",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:create": "wrangler d1 create ayat-of-the-day",
+    "db:migrate:local": "wrangler d1 migrations apply ayat-of-the-day --local",
+    "db:migrate:remote": "wrangler d1 migrations apply ayat-of-the-day --remote",
+    "check": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test test/**/*.test.ts"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260831.1",
+    "typescript": "^7.0.2",
+    "wrangler": "^4.127.1"
+  }
+}
